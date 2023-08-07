@@ -133,9 +133,9 @@ Here are some example snippets to help you get started creating a container.
         <<: *airflow-common
         command: webserver
         ports:
-        - "8080:8080"
+        - "172.17.0.1:9999:8080"
         healthcheck:
-        test: ["CMD", "curl", "--fail", "http://172.17.0.1:8080/health"]
+        test: ["CMD", "curl", "--fail", "http://172.17.0.1:9999/health"]
         interval: 30s
         timeout: 10s
         retries: 5
@@ -298,7 +298,7 @@ Here are some example snippets to help you get started creating a container.
         profiles:
         - flower
         ports:
-        - "5555:5555"
+        - "172.17.0.1:5555:5555"
         healthcheck:
         test: ["CMD", "curl", "--fail", "http://172.17.0.1:5555/"]
         interval: 30s
@@ -313,7 +313,6 @@ Here are some example snippets to help you get started creating a container.
 
     volumes:
     postgres-db-volume:
-
 
 # Maintenance
 

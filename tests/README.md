@@ -105,9 +105,9 @@ Here are some example snippets to help you get started creating a container.
     postgres:
         image: postgres:13
         environment:
-        POSTGRES_USER: airflow
-        POSTGRES_PASSWORD: airflow
-        POSTGRES_DB: airflow
+        POSTGRES_USER: ${POSTGRES_USER:-airflow}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-airflow}
+        POSTGRES_DB: ${POSTGRES_DB:-airflow}
         volumes:
         - postgres-db-volume:/var/lib/postgresql/data
         healthcheck:
@@ -118,7 +118,7 @@ Here are some example snippets to help you get started creating a container.
         restart: always
 
     redis:
-        image: redis:latest
+        image: redis:${REDIS_VERSION:-latest}
         expose:
         - 6379
         healthcheck:
@@ -313,6 +313,18 @@ Here are some example snippets to help you get started creating a container.
 
     volumes:
     postgres-db-volume:
+
+### Environment variables
+
+|       Variable       | Value (example)  |
+| :------------------: | :--------------: |
+|     ADMIN_EMAIL      | admin@gmail.com  |
+|    ADMIN_PASSWORD    |  your-password   |
+| SOFTWARE_VERSION_TAG |      latest      |
+|    REDIS_VERSION     |      latest      |
+|    POSTGRES_USER     |    your-user     |
+|  POSTGRES_PASSWORD   | your-db-password |
+|     POSTGRES_DB      |   your-db-name   |
 
 # Maintenance
 

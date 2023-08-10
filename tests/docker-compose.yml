@@ -38,7 +38,7 @@ x-airflow-common: &airflow-common
 
 services:
   postgres:
-    image: postgres:13
+    image: postgres:${POSTGRES_SOFTWARE_VERSION_TAG}
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-airflow}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-airflow}

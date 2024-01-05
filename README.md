@@ -64,6 +64,6 @@ First, install the NPM package: `npm install amqplib`
 
 There are two methods for installing the library package in Airflow.
 
-One option is to configure the *__PIP_ADDITIONAL_REQUIREMENTS_* variable in the docker-compose file. Alternatively, utilize the custom Docker image provided at https://airflow.apache.org/docs/docker-stack/build.html.
+One option is to configure the `_PIP_ADDITIONAL_REQUIREMENTS` variable in the docker-compose file. Alternatively, utilize the custom Docker image provided at https://airflow.apache.org/docs/docker-stack/build.html.
 
-To opt for the straightforward approach using the *__PIP_ADDITIONAL_REQUIREMENTS_* variable in docker-compose, navigate to your docker-compose file, Open Elestio dashboard > Service overview > Click on the Update CONFIG button > Once in the docker-compose file, insert the *__PIP_ADDITIONAL_REQUIREMENTS_* variable in all instances specified at https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml. Finally, click the "Update & Restart" button to apply the changes.
+To opt for the straightforward approach using the `_PIP_ADDITIONAL_REQUIREMENTS` variable in docker-compose, navigate to your docker-compose file, Open Elestio dashboard > Service overview > Click on the Update CONFIG button > Once in the docker-compose file, insert the `_PIP_ADDITIONAL_REQUIREMENTS` variable in all instances specified at `airflow-common` & `_PIP_ADDITIONAL_REQUIREMENTS` empty string in `airflow-init` https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml then go to ENV and change the AIRFLOW_UID to `AIRFLOW_UID=50000`, Finally, click the "Update & Restart" button to apply the changes.
